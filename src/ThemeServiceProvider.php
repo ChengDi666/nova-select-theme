@@ -14,8 +14,8 @@ class ThemeServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
-        'DavidGriffiths\NovaSelectTheme\Commands\AddSelect',
-        'DavidGriffiths\NovaSelectTheme\Commands\RemoveSelect',
+        'Norgeit\NovaSelectTheme\Commands\AddSelect',
+        'Norgeit\NovaSelectTheme\Commands\RemoveSelect',
     ];
 
     /**
