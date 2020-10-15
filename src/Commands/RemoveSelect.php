@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidGriffiths\NovaSelectTheme\Commands;
+namespace Norgeit\NovaSelectTheme\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
