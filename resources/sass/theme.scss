@@ -16,8 +16,13 @@
 
 .theme-lists li{
   padding: 0.75rem;
+  cursor: pointer;
 }
 
+
+.theme-lists li:hover{
+  background-color: #eee;
+}
 
 
 
