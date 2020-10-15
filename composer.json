@@ -1,0 +1,31 @@
+{
+    "name": "norgeit/nova-select-theme",
+    "description": "Laravel Nova 选择主题",
+    "keywords": [
+        "laravel",
+        "nova",
+        "theme",
+        "select"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Norgeit\\NovaSelectTheme\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Norgeit\\NovaSelectTheme\\ThemeServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
