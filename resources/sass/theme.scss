@@ -25,18 +25,6 @@
 }
 
 
-.blue .hamburger-menu:before {  //汉堡按钮
-  background: linear-gradient(
-          to bottom,
-          white, white 20%,
-          transparent 20%, transparent 40%,
-          white 40%, white 60%,
-          transparent 60%, transparent 80%,
-          white 80%, white 100%
-  );
-}
-
-
 /* 搜索-背景颜色-边框颜色 */
 /* .blue .form-global-search{
   background-color: var(--blue-top);
@@ -50,6 +38,18 @@
   /* box-shadow: none; */
 /* }  */
 
+
+
+.blue .hamburger-menu:before {  //汉堡按钮
+  background: linear-gradient(
+          to bottom,
+          white, white 20%,
+          transparent 20%, transparent 40%,
+          white 40%, white 60%,
+          transparent 60%, transparent 80%,
+          white 80%, white 100%
+  );
+}
 
 // 侧边-背景
 .blue .bg-grad-sidebar{

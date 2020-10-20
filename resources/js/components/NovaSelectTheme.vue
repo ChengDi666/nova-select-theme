@@ -29,11 +29,6 @@
             const themes = (localStorage.themesname === undefined ? 'blue' : localStorage.themesname);
             // console.log('默认主题：',themes);
             this.toggleTheme(themes);
-        //    if(themes === 'blue') {
-        //         document.querySelector('html').classList.toggle('blue');
-        //     } else if( themes === 'green') {
-        //         document.querySelector('html').classList.toggle('green');
-        //     }
             localStorage.themesname = themes;
             this.mytypes = themes;
         },
@@ -42,11 +37,12 @@
             selectOne(mytype) {
                 // console.log('上次颜色:',this.mytypes);
                 // console.log('本次颜色:',mytype);
-                if(this.mytypes === 'blue') {
-                    document.querySelector('html').classList.remove('blue');
-                } else if (this.mytypes === 'green') {
-                    document.querySelector('html').classList.remove('green');
-                }
+                this.removeThemes(this.mytypes);
+                // if(this.mytypes === 'blue') {
+                //     document.querySelector('html').classList.remove('blue');
+                // } else if (this.mytypes === 'green') {
+                //     document.querySelector('html').classList.remove('green');
+                // }
                 
                 if(this.mytypes === mytype) {
                     // console.log('相同');
@@ -68,6 +64,14 @@
                     if(type === item.type) {
                         // console.log('是 ' + item.name);
                         document.querySelector('html').classList.toggle(item.type);
+                    }
+                });
+            },
+            removeThemes(type) {
+                this.allThemes.map(item => {
+                    if(type === item.type) {
+                        // console.log('是 ' + item.name);
+                        document.querySelector('html').classList.remove(item.type);
                     }
                 });
             }
