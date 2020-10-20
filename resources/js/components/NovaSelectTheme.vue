@@ -2,8 +2,8 @@
         <div>
             <p class="theme-title">选择主题：</p>
             <ul class="list-reset theme-lists">
-                <li @click="selectOne('blue')" :class="{ 'theme-bgblue': mytypes === 'blue' }">
-                    蓝色
+                <li v-for="(item,index) in allThemes" :key="index" @click="selectOne(item.type)" :class="{ 'theme-bgblue': mytypes === item.type }">
+                    {{item.name}}
                 </li>
             </ul>
         </div>
@@ -14,9 +14,11 @@
 
     export default {
         name: "NovaSelectTheme",
-
         data: () => ({
-            mytypes: ''
+            mytypes: '',
+            allThemes: [
+                {type:'blue', name:'蓝色'}
+            ]
         }),
 
         created() {
@@ -26,13 +28,12 @@
             // console.log('本地存储主题：',localStorage.themesname);
             const themes = (localStorage.themesname === undefined ? 'blue' : localStorage.themesname);
             // console.log('默认主题：',themes);
-           if(themes === 'blue') {
-                document.querySelector('html').classList.toggle('blue');
-            } else if( themes === 'green') {
-                document.querySelector('html').classList.toggle('green');
-            } else if( themes === 'ceshis') {
-                document.querySelector('html').classList.toggle('ceshis');
-            }
+            this.toggleTheme(themes);
+        //    if(themes === 'blue') {
+        //         document.querySelector('html').classList.toggle('blue');
+        //     } else if( themes === 'green') {
+        //         document.querySelector('html').classList.toggle('green');
+        //     }
             localStorage.themesname = themes;
             this.mytypes = themes;
         },
@@ -45,8 +46,6 @@
                     document.querySelector('html').classList.remove('blue');
                 } else if (this.mytypes === 'green') {
                     document.querySelector('html').classList.remove('green');
-                } else if (this.mytypes === 'ceshis') {
-                    document.querySelector('html').classList.remove('ceshis');
                 }
                 
                 if(this.mytypes === mytype) {
@@ -56,14 +55,21 @@
                     return ;
                 }
                 localStorage.themesname = mytype.toString();
-                if(mytype === 'blue') {
-                    document.querySelector('html').classList.toggle('blue');
-                } else if( mytype === 'green') {
-                    document.querySelector('html').classList.toggle('green');
-                } else  if( mytype === 'ceshis') {
-                    document.querySelector('html').classList.toggle('ceshis');
-                }
+                this.toggleTheme(mytype);
+                // if(mytype === 'blue') {
+                //     document.querySelector('html').classList.toggle('blue');
+                // } else if( mytype === 'green') {
+                //     document.querySelector('html').classList.toggle('green');
+                // }
                 this.mytypes = mytype;
+            },
+            toggleTheme(type) {
+                this.allThemes.map(item => {
+                    if(type === item.type) {
+                        // console.log('是 ' + item.name);
+                        document.querySelector('html').classList.toggle(item.type);
+                    }
+                });
             }
         }
 
