@@ -142,6 +142,11 @@
   }
   
   /* 右上文字-颜色 */
+  .new .mytext-90 {
+    color: var(--blue-ziti);
+  }
+  
+  /* 右上文字-颜色 */
   .blue .mytext-90 {
     color: var(--blue-ziti);
   }
@@ -171,11 +176,146 @@
   /* .blue .content{
     margin-left: 0;
   } */
+
+
+  // 主体背景
+  .new {
+    body.bg-40 {
+      background: var(--new-40) url('/images/bg-bg.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+    }
+    .form-input-bordered, .form-input-row {
+      background: transparent;
+      color: rgb(32,213,252);
+      border-color: #165bbd;
+      box-shadow: 0 0 20px -8px rgb(255,255,255) inset;
+    }
+    .border-40 { border-color: transparent; }
+    h1.text-90, h4.text-90, p.text-90, h4.text-80, h3.text-80,
+    .tab-content div.flex div.text-90, .tab-content div.flex p,
+    .tab-content div.flex span, .text-70, .table td,
+    .card .text-90, .card,
+    #nova .content div.card div.flex ul li
+    { color: var(--white) !important; }
+    .table td { border: none; }
+    .table th { color: #1ebaf0; background-color: transparent; border: none; }
+    .table td div span a.text-primary, .mytext-90 { color: #1ebaf0; }
+    .ceshi path{ fill: #1ebaf0; }
+    #nova .min-h-screen .bg-grad-sidebar { background: transparent !important; }
+    #nova .content div[class="v-popover ml-auto h-9 flex items-center dropdown-right"], #nova .content span[class="hamburger-menu"] {
+      // background-color: var(--new-40);
+      z-index: 51;
+    }
+
+    .hamburger-menu:before {
+      background: linear-gradient(to bottom, white, white 20%, transparent 20%, transparent 40%, white 40%, white 60%, transparent 60%, transparent 80%, white 80%, white 100%);
+    }
+
+    #nova .content .h-header, .bg-logo, h3.bg-30 { background-color: var(--new-40); }
+    #nova .content .h-header a{
+      color: #1ebaf0;
+      height: 60px;
+      line-height: 70px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 220px);
+      text-align: center;
+      font-size: 1.8rem;
+      background: transparent url('/images/bg-title.png');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 80% 60%;
+    }
+    #nova .content .h-header .relative .relative .relative { display: none; }
+    #nova .min-h-screen .bg-grad-sidebar { border-right: 2px solid #1e8fba; padding-left: 0; }
+    #nova .min-h-screen .bg-grad-sidebar > h3,
+    #nova .min-h-screen .bg-grad-sidebar > div > h3 { padding: .5rem; }
+    #nova .min-h-screen .bg-grad-sidebar > h3,
+    #nova .min-h-screen .bg-grad-sidebar > div > ul,
+    #nova .min-h-screen .bg-grad-sidebar > div > p,
+    #nova .min-h-screen .bg-grad-sidebar > div > h3 { padding-left: 1.5rem; }
+    .card table thead { border: 1px solid #1e8fba; }
+    #nova .card div.border-50 { border: none; }
+    #nova .content:last-child { border: 1px solid #1e8fba; }
+    .form-select {
+      background: var(--new-40) !important; color: var(--white); border: 1px solid #1e8fba;
+    }
+    .checkbox { background-color: transparent; color: var(--white); border: 1px solid #1e8fba; }
+    .table tr:hover td { background-color: rgba(0, 0, 0, .1); }
+    #nova .flex .relative input[type="search"] {
+      background-color: transparent !important;
+      border: 1px solid #1e8fba;
+      color: var(--white) !important;
+    }
+    #nova .vs__selected-options input.vs__search { border: none !important; }
+    #nova .card .filter-menu-dropdown .v-popover button div.h-dropdown-trigger {
+      background: transparent;
+      border: 1px solid #1e8fba;
+    }
+    #nova .card .relative div[class="bg-20 rounded-b-lg"] { background-color: transparent; }
+    #nova .card, .relative .vxe-table {
+      background: transparent url('/images/bg-card.png');
+      background-size: 100% 100%;
+      padding: .5rem;
+      box-shadow: 0 0 30px -10px #fff inset;
+      border-radius: 0.3rem;
+    }
+    .card .card { background: none; }
+    .card div[dusk="delete-menu"] div.v-popover { background-color: transparent; border: 1px solid #1e8fba; }
+    .vxe-table--render-default .vxe-table--border-line { border: none; }
+    .vxe-table--render-default.border--default .vxe-table--header-wrapper { background-color: transparent;border: 1px solid #1e8fba; }
+    .vxe-table--render-default .vxe-table--body-wrapper{ background-color: transparent; }
+    .vxe-table--render-default.border--default .vxe-header--column,.vxe-table--render-default.border--default .vxe-body--column { background-image: none; }
+    .vxe-table .vxe-table--header-wrapper .vxe-table--header-border-line { border-bottom: none; }
+
+    #nova .card div.relative table.table tbody tr td span.text-90,
+    #nova .card div.filter-menu-dropdown div.trigger button div.h-dropdown-trigger svg,
+    .card .flex .relative button svg,
+    .vxe-table--render-wrapper, .tree-table-title, .vxe-table--render-default .vxe-tree--node-btn,
+    .vxe-table--render-default .vxe-tree--node-btn:hover
+    { color: var(--white); }
+    #nova .card div.trigger button div.h-dropdown-trigger svg path { fill: var(--white); }
+    .vxe-icon--caret-right:before { border-left-color: #fff; }
+    #nova div[class="relationship-tabs-panel card"] .card {
+      background: transparent;
+      box-shadow: none;
+    }
+    #nova .card .relative .rounded-b-lg nav button { color: #1ebaf0; border-color: transparent; }
+    #nova .card .relative .rounded-b-lg nav span.text-80 { color: var(--white); }
+    #nova .card .tab-content div.flex { border-bottom: 1px solid #ffffff21; }
+    #nova .card select { background-color: var(--new-40) !important; }
+    .vue-treeselect .vue-treeselect__control { background-color: var(--new-40) !important; }
+    // .vue-treeselect__menu { background-color: var(--new-40) !important; } // 选择过滤背景
+    div.open {
+      .bg-white, .select-none div.bg-30 { background-color: var(--new-40) !important; }
+      .select-none div.bg-30 bottom.text-80, .list-reset .list-reset li, ul.list-reset li a.text-90,
+      ul.list-reset li label {color: var(--white);}
+      ul.list-reset li a.text-90:hover {opacity: 0.7;}
+      button[dusk="delete-selected-button"] { color: #fff; }
+    }
+    .relationship-tabs-panel button.tab { color: var(--white); }
+    input.form-input:read-only { background-color: var(--new-40) !important; }
+
+    #nova .content {
+      .relative form div.card .flex label.text-80, .relative form .flex a.text-80 { color: var(--white); }
+      div[dusk="dashboard-main"] .card { background-color: var(--white); }
+      div[dusk="dashboard-main"] .card h3.text-80 { color: #7c858e !important; }
+      #amapDemo { border-radius: .5rem; }
+      #myBigMap { box-shadow: none; }
+    }
+
+  }
   
   :root {
+    --new-40: #0a12a3;
+
     --blue-top: #58b1fc;
     --blue-cebian: #248dc1;
     --blue-ziti: #fff;
+    --new-ziti: #f00;
   
   
   

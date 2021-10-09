@@ -17,7 +17,8 @@
         data: () => ({
             mytypes: '',
             allThemes: [
-                {type:'blue', name:'蓝色'}
+                {type:'blue', name:'蓝色'},
+                {type:'new', name:'最新'}
             ]
         }),
 
@@ -25,42 +26,30 @@
         },
 
         mounted() {
-            // console.log('本地存储主题：',localStorage.themesname);
             const themes = (localStorage.themesname === undefined ? 'blue' : localStorage.themesname);
-            // console.log('默认主题：',themes);
             this.toggleTheme(themes);
-        //    if(themes === 'blue') {
-        //         document.querySelector('html').classList.toggle('blue');
-        //     } else if( themes === 'green') {
-        //         document.querySelector('html').classList.toggle('green');
-        //     }
             localStorage.themesname = themes;
             this.mytypes = themes;
         },
 
         methods: {
             selectOne(mytype) {
+                document.querySelectorAll('.w-sidebar h3').forEach((item) => {
+                    if (item.style.borderWidth != '') {
+                        item.style.border = 'none'
+                        item.style.boxShadow = 'none'
+                    }
+                })
                 // console.log('上次颜色:',this.mytypes);
                 // console.log('本次颜色:',mytype);
-                if(this.mytypes === 'blue') {
-                    document.querySelector('html').classList.remove('blue');
-                } else if (this.mytypes === 'green') {
-                    document.querySelector('html').classList.remove('green');
-                }
-                
+                if (this.mytypes != '') document.querySelector('html').classList.remove(this.mytypes);
                 if(this.mytypes === mytype) {
-                    // console.log('相同');
                     localStorage.themesname = 'undefined';
                     this.mytypes = '';
                     return ;
                 }
                 localStorage.themesname = mytype.toString();
                 this.toggleTheme(mytype);
-                // if(mytype === 'blue') {
-                //     document.querySelector('html').classList.toggle('blue');
-                // } else if( mytype === 'green') {
-                //     document.querySelector('html').classList.toggle('green');
-                // }
                 this.mytypes = mytype;
             },
             toggleTheme(type) {
